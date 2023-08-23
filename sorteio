@@ -1,0 +1,40 @@
+package com.example.mandinhagu11;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.EditText;
+
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity {
+    EditText edmin, edmax;
+    TextView textView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        edmin=findViewById(R.id.edMin);
+
+        edmin.getText();
+    }
+
+    public void Sortear(Viw v){
+        int min, max;
+        min=Integer.porseInt(edmin.getText().toString());
+        max=Integer.porseInt(edmax.getText().toString());
+
+
+        //Math.random (0,1)
+       int sorteado= (int)(min+ (Math.random()*(max-min+1)));
+       textView.setText(sorteado);
+
+
+
+       Random rand= new Random();
+
+
+       sorteado=rand.nextInt(bound: (max-min)+1)+min);
+        textView.setText(sorteado);
+    }
+}
