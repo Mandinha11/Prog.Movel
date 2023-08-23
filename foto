@@ -1,0 +1,21 @@
+public class MainActivity extends AppCompatActivity {
+    
+    ImagemView imgFoto;
+    
+    
+    EditText edmin, edmax;
+    TextView textView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+      imgFoto=findViewById(R.id.imagemView);
+      ImgFoto.setImagemReource(R.drawable.happy);
+    }
+
+    public void Sortear(Viw v){
+        int min, max;
+        min=Integer.porseInt(edmin.getText().toString());
+        max=Integer.porseInt(edmax.getText().toString());
+
+
