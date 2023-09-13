@@ -1,0 +1,36 @@
+package xuxu.com.example.contasclick;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+
+public class MainActivity extends AppCompatActivity {
+    TextView edcontador;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        contador = 0;
+    }
+
+        private void atualizaContador() {
+            TextView tvCont = (TextView)findViewById(R.id.textViewContador);
+            tvCont.setText(contador.toString());
+
+    }
+
+    Button btnMais = (Button)findViewById(R.id.buttonMais);
+    btnMais.setOnClickListener(new View.OnClickListener() {
+        @Override
+                
+        public void onClick(View v) {
+            contador += 1;
+            atualizaContador();
+        }
+}
