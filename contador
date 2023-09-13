@@ -1,0 +1,37 @@
+CODIGO DO TESTE
+
+
+
+Integer contador;
+
+private void atualizaContador() {
+TextView tvCont = (TextView)findViewById(R.id.textViewContador);
+tvCont.setText(contador.toString());
+}
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.activity_main);
+
+contador = 0;
+
+
+Button btnMais = (Button)findViewById(R.id.buttonMais);
+btnMais.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+contador += 1;
+atualizaContador();
+}
+});
+
+Button btnMenos = (Button)findViewById(R.id.buttonMenos);
+btnMenos.setOnClickListener(new View.OnClickListener() {
+@Override
+public void onClick(View v) {
+contador -= 1;
+atualizaContador();
+}
+});
+}
