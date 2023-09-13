@@ -1,0 +1,18 @@
+ //Inflar o Layout
+
+        LayoutInflater inflater = LayoutInflater.from(mContexto);
+        convertView = inflater.inflate(mResource,parent,false);
+
+        TextView txtNome = convertView.findViewById(R.id.idnome);
+        TextView txtId = convertView.findViewById(R.id.idoi);
+        TextView txtImagem = convertView.findViewById(R.id.imageView);
+        
+        txtNome.setText(getItem(position).nome);
+        txtId.setText(String.valueOf(getItem(position)id));
+        txt
+        return convertView;
+
+      //  return super.getView(position, convertView, parent);
+
+    }
+}
