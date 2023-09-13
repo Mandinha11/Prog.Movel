@@ -1,0 +1,97 @@
+package xuxu.com.example.xero;
+
+public class ItemChurrasco {
+    int id;
+    String nome;
+    int imagem;
+
+    public ItemChurrasco(int id, String nome, int imagem) {
+        this.id = id;
+        this.nome = nome;
+        this.imagem = imagem;
+    }
+}
+********************************************************************
+
+package xuxu.com.example.xero;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity {
+
+    ArrayList<ItemChurrasco> ListaItemChurrasco = new ArrayList<ItemChurrasco>();
+    ListView listView;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        listView=findViewById(R.id.listView);
+
+        ListaItemChurrasco.add(new ItemChurrasco(1, "Carne",R.drawable.carne));
+        ListaItemChurrasco.add(new ItemChurrasco(2, "Linguiça",R.drawable.linguica));
+        ListaItemChurrasco.add(new ItemChurrasco(3, "Pão de Alho",R.drawable.paodealho));
+        ListaItemChurrasco.add(new ItemChurrasco(4, "Guarana",R.drawable.guarana));
+        ListaItemChurrasco.add(new ItemChurrasco(5, "Refrigerante",R.drawable.refrigerante));
+
+        ItemChurrascoAdapter adapter = new ItemChurrascoAdapter(this,R.layout.item_churrasco,ListaItemChurrasco);
+
+        listView.setAdapter(adapter);
+    }
+}
+***********************************************************
+package xuxu.com.example.xero;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import java.util.List;
+
+public class ItemChurrascoAdapter extends ArrayAdapter<ItemChurrasco> {
+
+Context mContexto;
+int mResource;
+    public ItemChurrascoAdapter(@NonNull Context context, int resource, @NonNull List<ItemChurrasco> objects) {
+        super(context, resource, objects);
+        mContexto = context;
+        mResource = resource;
+
+    }
+
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        //Inflar o Layout
+
+        LayoutInflater inflater = LayoutInflater.from(mContexto);
+        convertView = inflater.inflate(mResource,parent,false);
+        return convertView;
+
+      //  return super.getView(position, convertView, parent);
+
+    }
+}
+*******************************************************************
+
+
+
+ 
+
+
+
+
+
+
+
+
+
